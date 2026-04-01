@@ -1,0 +1,517 @@
+/* =============================================
+   RESET & BASE
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Nanum Gothic', sans-serif;
+  font-weight: 300;
+  background: linear-gradient(160deg,
+    #a8d4ed 0%,
+    #c5e3f5 15%,
+    #ddf0fb 35%,
+    #eef7fd 55%,
+    #f8fcff 75%,
+    #ffffff 100%
+  );
+  background-attachment: fixed;
+  color: #1a3560;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =============================================
+   SCROLL REVEAL
+   ============================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =============================================
+   SECTION BASE
+   ============================================= */
+.section {
+  width: 100%;
+  position: relative;
+}
+
+/* =============================================
+   1. COVER
+   ============================================= */
+.cover {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover-inner {
+  text-align: center;
+}
+
+.cover-title {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 110px;
+  color: #1a3560;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.cover-sub {
+  margin-top: 20px;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 4px;
+  color: #4a6080;
+}
+
+/* =============================================
+   2. PROFILE
+   ============================================= */
+.profile {
+  padding: 80px 120px;
+}
+
+.profile-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 72px;
+  color: #1a3560;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.profile-name-row {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 48px;
+}
+
+.profile-name-kr {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+  color: #1a3560;
+  letter-spacing: 2px;
+}
+
+.profile-name-en {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  color: #4a6080;
+  letter-spacing: 3px;
+}
+
+.profile-birth {
+  font-size: 13px;
+  color: #7a96b0;
+  letter-spacing: 1px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 60px;
+}
+
+.profile-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.profile-label {
+  flex-shrink: 0;
+  display: inline-block;
+  padding: 3px 12px;
+  border: 1px solid #a8c8e0;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #4a6080;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.profile-content {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #4a6080;
+}
+
+.profile-content p + p {
+  margin-top: 8px;
+}
+
+.skill-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.skill-icons img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* =============================================
+   3~11. ARTWORK
+   ============================================= */
+.artwork {
+  padding: 80px 120px;
+  border-top: 1px solid rgba(168, 196, 220, 0.3);
+}
+
+.artwork-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.artwork-header {
+  margin-bottom: 28px;
+}
+
+.artwork-heading {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 44px;
+  color: #1a3560;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.artwork-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.artwork-title-text {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #4a6080;
+  letter-spacing: 0.3px;
+}
+
+.tool-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tool-icons img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+.video-link-btn {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid #a8c8e0;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 300;
+  color: #4a6080;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.3px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.video-link-btn:hover {
+  background: rgba(168, 212, 237, 0.3);
+  border-color: #7aaecb;
+}
+
+/* =============================================
+   IMAGE GRIDS
+   ============================================= */
+.img-grid {
+  width: 100%;
+}
+
+.img-grid img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 단일 이미지 — 캡처 전체 표시 */
+.grid-single {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.grid-single img {
+  width: 100%;
+  height: auto !important;
+  display: block;
+  border: 3px solid rgba(168, 196, 220, 0.8);
+}
+
+/* 2열 그리드 (이미지 2개) */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* 2x2 그리드 (이미지 4개) */
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* 3개 이미지: 첫번째 full-width, 나머지 2열 */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.grid-3 img.full-width {
+  grid-column: 1 / -1;
+  height: 300px;
+}
+
+/* =============================================
+   OPERATING HISTORY
+   ============================================= */
+.operating {
+  padding: 80px 120px;
+  border-top: 1px solid rgba(168, 196, 220, 0.3);
+}
+
+.operating-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.operating-sub {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #7a96b0;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+  margin-top: 6px;
+}
+
+.operating-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid rgba(168, 196, 220, 0.35);
+}
+
+.op-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(168, 196, 220, 0.25);
+  transition: background 0.2s;
+}
+
+.op-item:hover {
+  background: rgba(168, 212, 237, 0.08);
+  padding-left: 12px;
+}
+
+.op-year {
+  font-size: 12px;
+  font-weight: 700;
+  color: #7aaecb;
+  letter-spacing: 1px;
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.op-title {
+  font-size: 15px;
+  color: #1a3560;
+  letter-spacing: 0.3px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* =============================================
+   ABOUT
+   ============================================= */
+.about {
+  padding: 80px 120px;
+  border-top: 1px solid rgba(168, 196, 220, 0.3);
+}
+
+.about-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  border-left: 2px solid rgba(168, 196, 220, 0.6);
+  padding-left: 28px;
+  margin-top: 32px;
+}
+
+.about-body p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: #4a6080;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* =============================================
+   OUTRO
+   ============================================= */
+.outro {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(168, 196, 220, 0.3);
+}
+
+.outro-inner {
+  text-align: center;
+}
+
+.outro-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 48px;
+  color: #1a3560;
+  letter-spacing: 4px;
+}
+
+/* =============================================
+   RESPONSIVE — 태블릿 (≤ 900px)
+   ============================================= */
+@media (max-width: 900px) {
+  .cover-title { font-size: 72px; }
+
+  .profile, .artwork, .operating, .about {
+    padding: 60px 40px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .artwork-heading { font-size: 36px; }
+  .section-heading { font-size: 48px; }
+
+  .artwork-inner,
+  .grid-single { max-width: 100%; }
+}
+
+/* =============================================
+   RESPONSIVE — 모바일 (≤ 480px)
+   ============================================= */
+@media (max-width: 480px) {
+
+  /* 커버 */
+  .cover-title {
+    font-size: 40px;
+    letter-spacing: -1px;
+  }
+  .cover-sub {
+    font-size: 12px;
+    letter-spacing: 2px;
+  }
+
+  /* 공통 섹션 패딩 */
+  .profile, .artwork, .operating, .about {
+    padding: 48px 20px;
+  }
+
+  /* 헤딩 */
+  .section-heading { font-size: 36px; }
+  .artwork-heading { font-size: 28px; }
+
+  /* 프로필 */
+  .profile-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .profile-name-kr { font-size: 18px; }
+  .profile-name-en { font-size: 13px; }
+  .profile-label {
+    font-size: 10px;
+    padding: 2px 10px;
+  }
+  .profile-content { font-size: 12px; }
+  .skill-icons img { width: 28px; height: 28px; }
+
+  /* 아트웍 메타 */
+  .artwork-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .artwork-title-text { font-size: 11px; }
+
+  /* 이미지 */
+  .artwork-inner,
+  .grid-single { max-width: 100%; }
+  .grid-single img { border-width: 2px; }
+
+  /* 오퍼레이팅 */
+  .op-item { gap: 16px; padding: 14px 0; }
+  .op-year { font-size: 11px; }
+  .op-title { font-size: 13px; }
+
+  /* About */
+  .about-body p { font-size: 13px; line-height: 1.8; }
+  .about-body { padding-left: 18px; }
+
+  /* 아우트로 */
+  .outro { height: 40vh; }
+  .outro-text { font-size: 32px; letter-spacing: 3px; }
+}
