@@ -84,17 +84,273 @@ body {
 }
 
 /* =============================================
-   2. PROFILE
+   2. PROFILE — 레퍼런스 2컬럼 레이아웃
    ============================================= */
 .profile {
-  padding: 80px 120px;
+  padding: 80px 80px;
 }
 
-.profile-inner {
+/* ── 전체 2컬럼 래퍼 ── */
+.profile-page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
   max-width: 1100px;
   margin: 0 auto;
 }
 
+/* ── 왼쪽 ── */
+.pf-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+/* 사진 원형 */
+.pf-photo-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.pf-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: top center;
+  border: 3px solid #a8d4ed;
+  display: block;
+}
+
+.pf-sparkle {
+  position: absolute;
+  font-size: 22px;
+  color: #7aaecb;
+  line-height: 1;
+}
+
+.pf-sparkle--tl { top: -4px; left: -4px; }
+.pf-sparkle--br { bottom: -4px; right: -4px; }
+
+/* 이름 블록 */
+.pf-name-block {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.pf-name-kr {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #1a3560;
+  letter-spacing: 1px;
+}
+
+.pf-name-sub {
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  color: #1a3560;
+  letter-spacing: 1px;
+}
+
+/* 섹션 블록 */
+.pf-section-block {
+  width: 100%;
+}
+
+/* 배지 레이블 */
+.pf-badge {
+  display: inline-block;
+  padding: 4px 16px;
+  background: #1a3560;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+}
+
+/* 기본정보 리스트 */
+.pf-info-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.pf-info-list li {
+  font-size: 14px;
+  color: #4a6080;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.pf-icon {
+  flex-shrink: 0;
+  font-size: 13px;
+  color: #7aaecb;
+  width: 18px;
+  text-align: center;
+}
+
+/* 스킬 바 */
+.pf-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pf-skill-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-skill-name {
+  font-size: 13px;
+  color: #4a6080;
+  width: 96px;
+  flex-shrink: 0;
+}
+
+.pf-bar {
+  flex: 1;
+  height: 7px;
+  background: rgba(168, 196, 220, 0.3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pf-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7aaecb, #1a3560);
+  border-radius: 999px;
+}
+
+/* ── 오른쪽 ── */
+.pf-right {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 경력 타임라인 */
+.pf-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid rgba(122, 174, 203, 0.4);
+  padding-left: 20px;
+  margin-bottom: 8px;
+}
+
+.pf-tl-item {
+  position: relative;
+  padding: 0 0 24px 0;
+}
+
+.pf-tl-dot {
+  position: absolute;
+  left: -27px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7aaecb;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px #7aaecb;
+}
+
+.pf-tl-body {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.pf-tl-period {
+  font-size: 13px;
+  color: #7aaecb;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.pf-tl-company {
+  font-size: 17px;
+  color: #1a3560;
+  font-weight: 700;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.pf-tl-role {
+  font-size: 14px;
+  color: #4a6080;
+}
+
+.pf-tl-desc {
+  font-size: 13px;
+  color: #7a96b0;
+  line-height: 1.7;
+  margin-top: 4px;
+}
+
+/* 수행업무 카드 그리드 */
+.pf-task-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pf-task-card {
+  border: 1px solid rgba(168, 196, 220, 0.5);
+  border-radius: 8px;
+  padding: 16px 14px;
+  background: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background 0.2s;
+}
+
+.pf-task-card:hover {
+  background: rgba(168, 212, 237, 0.12);
+}
+
+.pf-task-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.pf-task-card strong {
+  font-size: 15px;
+  color: #1a3560;
+  font-family: 'Nanum Gothic', sans-serif;
+  font-weight: 700;
+}
+
+.pf-task-card p {
+  font-size: 13px;
+  color: #7a96b0;
+  line-height: 1.6;
+}
+
+/* 한줄 소개 바 */
+.pf-intro-bar {
+  background: #1a3560;
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+/* 기존 section-heading 유지 (operating 등에서 사용) */
 .section-heading {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-style: italic;
@@ -103,91 +359,6 @@ body {
   color: #1a3560;
   line-height: 1;
   margin-bottom: 16px;
-}
-
-.profile-name-row {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  margin-bottom: 48px;
-}
-
-.profile-name-kr {
-  font-family: 'Nanum Gothic', sans-serif;
-  font-weight: 500;
-  font-size: 22px;
-  color: #1a3560;
-  letter-spacing: 2px;
-}
-
-.profile-name-en {
-  font-family: 'Nanum Gothic', sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  color: #4a6080;
-  letter-spacing: 3px;
-}
-
-.profile-birth {
-  font-size: 13px;
-  color: #7a96b0;
-  letter-spacing: 1px;
-}
-
-.profile-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 60px;
-}
-
-.profile-col {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-}
-
-.profile-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-}
-
-.profile-label {
-  flex-shrink: 0;
-  display: inline-block;
-  padding: 3px 12px;
-  border: 1px solid #a8c8e0;
-  border-radius: 999px;
-  font-size: 11px;
-  font-weight: 400;
-  color: #4a6080;
-  letter-spacing: 0.5px;
-  background: rgba(255, 255, 255, 0.5);
-  white-space: nowrap;
-  margin-top: 2px;
-}
-
-.profile-content {
-  font-size: 13px;
-  line-height: 1.9;
-  color: #4a6080;
-}
-
-.profile-content p + p {
-  margin-top: 8px;
-}
-
-.skill-icons {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-top: 2px;
-}
-
-.skill-icons img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
 }
 
 /* =============================================
@@ -435,14 +606,16 @@ body {
 @media (max-width: 900px) {
   .cover-title { font-size: 72px; }
 
-  .profile, .artwork, .operating, .about {
+  .profile, .artwork, .operating {
     padding: 60px 40px;
   }
 
-  .profile-grid {
+  .profile-page {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 40px;
   }
+
+  .pf-left { align-items: flex-start; }
 
   .artwork-heading { font-size: 36px; }
   .section-heading { font-size: 48px; }
@@ -467,7 +640,7 @@ body {
   }
 
   /* 공통 섹션 패딩 */
-  .profile, .artwork, .operating, .about {
+  .profile, .artwork, .operating {
     padding: 48px 20px;
   }
 
@@ -475,19 +648,19 @@ body {
   .section-heading { font-size: 36px; }
   .artwork-heading { font-size: 28px; }
 
-  /* 프로필 */
-  .profile-grid {
+  /* 프로필 2컬럼 → 1컬럼 */
+  .profile-page {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 32px;
   }
-  .profile-name-kr { font-size: 18px; }
-  .profile-name-en { font-size: 13px; }
-  .profile-label {
-    font-size: 10px;
-    padding: 2px 10px;
-  }
-  .profile-content { font-size: 12px; }
-  .skill-icons img { width: 28px; height: 28px; }
+
+  .pf-left { align-items: flex-start; }
+
+  .pf-photo-wrap, .pf-photo { width: 140px; height: 140px; }
+
+  .pf-name-kr, .pf-name-sub { font-size: 22px; }
+
+  .pf-task-grid { grid-template-columns: 1fr 1fr; }
 
   /* 아트웍 메타 */
   .artwork-meta {
@@ -506,10 +679,6 @@ body {
   .op-item { gap: 16px; padding: 14px 0; }
   .op-year { font-size: 11px; }
   .op-title { font-size: 13px; }
-
-  /* About */
-  .about-body p { font-size: 13px; line-height: 1.8; }
-  .about-body { padding-left: 18px; }
 
   /* 아우트로 */
   .outro { height: 40vh; }
